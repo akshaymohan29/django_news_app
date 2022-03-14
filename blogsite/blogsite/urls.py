@@ -18,7 +18,10 @@ from django.urls import path
 from blogapp import  views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path( 'home' ,views.Home),
+    path( 'home' ,views.Home ,name='home'),
     # path('index',views.Home2),
-path('about' ,views.About),path('contact' ,views.contact),path('post' ,views.Post)
+path('about' ,views.About ,name='about'),
+    path('contact' ,views.contact ,name='contact'),
+    path('post' ,views.Post ,name='post'),
+    # path('',views.login ,name='login')
 ]

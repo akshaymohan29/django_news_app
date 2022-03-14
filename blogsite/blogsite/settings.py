@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blogapp'
+    'blogapp',
 ]
 
 MIDDLEWARE = [
@@ -51,8 +51,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'blogsite.urls'
 
+ROOT_URLCONF = 'blogsite.urls'
+AUTH_USER_MODEL = 'blogapp.User'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -75,6 +76,17 @@ WSGI_APPLICATION = 'blogsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'blog',
+#         'OPTIONS': {'charset': 'utf8mb4'},
+#         'USER': 'root',
+#         'PASSWORD': 'admin',
+#         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+#         'PORT': '3306',
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

@@ -15,22 +15,22 @@ context = {
         'name': 'Akshay Mohan'
 
     }
-# def login(request):
-#     if request.method == 'POST':
-#         # username=request.POST['username']
-#         email=request.POST.get['email']
-#         password=request.POST.get['password']
-#
-#         user=auth.authenticate(email=email,password=password)
-#         print(user)
-#         if user is not None:
-#             auth.login(request,user)
-#             return redirect('home')
-#         else:
-#             messages.info(request, 'wrong ')
-#             return render(request, 'error.html')
-#     else:
-#         return render(request, 'login.html')
+def login(request):
+    if request.method == 'POST':
+        # username=request.POST['username']
+        email=request.POST.get['email']
+        password=request.POST.get['password']
+
+        user=auth.authenticate(email=email,password=password)
+        print(user)
+        if user is not None:
+            auth.login(request,user)
+            return redirect('home')
+        else:
+            messages.info(request, 'wrong ')
+            return render(request, 'error.html')
+    else:
+        return render(request, 'login.html')
 
 
 
@@ -94,16 +94,16 @@ def contact(request):
     return render(request,'contact.html',context)
 
 
-    # if request.method=='POST':
-    #
-    #  name=request.POST.get('name')
-    #  email = request.POST.get('email')
-    #  phone = request.POST.get('phone')
-    #  dis= request.POST.get('dis')
-    #  contact=Contact(name=name,email=email,phone=phone,dis=dis)
-    #  contact.save()
-    #
-    # return render(request,'contact.html',context)
+#     if request.method=='POST':
+    
+#      name=request.POST.get('name')
+#      email = request.POST.get('email')
+#      phone = request.POST.get('phone')
+#      dis= request.POST.get('dis')
+#      contact=Contact(name=name,email=email,phone=phone,dis=dis)
+#      contact.save()
+    
+#     return render(request,'contact.html',context)
 
 def Post(request):
     return render(request,'post.html',context)
